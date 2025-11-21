@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tampilkan Teks</title>
+</head>
+<body>
+  <input type="text" id="inputTeks" placeholder="Ketik sesuatu...">
+  <button id="tombolTampil">Tampilkan</button>
+  <p id="hasil"></p>
+
+  <script>
+    document.getElementById("tombolTampil").onclick = function() {
+      const teks = document.getElementById("inputTeks").value;
+      document.getElementById("hasil").textContent = teks;
+    };
+  </script>
+</body>
+</html>

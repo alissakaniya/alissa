@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan DOM</title>
+</head>
+<body>
+  <h1 id="judul" style="color:black;">Alissa Kaniya</h1>
+
+  <button id="ubahBg" style="background-color:#20B2AA; color:white;">Klik</button>
+  <br><br>
+
+  <input type="text" id="inputTeks" placeholder="Ketik sesuatu...">
+  <button id="tampilkan" style="background-color:#20B2AA; color:white;">Tampilkan</button>
+  <p id="hasil"></p>
+
+  <br>
+  <button id="merah" style="background-color:#20B2AA; color:red;">Merah</button>
+  <button id="hijau" style="background-color:#20B2AA; color:green;">Hijau</button>
+  <button id="biru" style="background-color:#20B2AA; color:blue;">Biru</button>
+
+  <script>
+    document.getElementById("ubahBg").onclick = function() {
+      if (document.body.style.backgroundColor === "lightgreen") {
+        document.body.style.backgroundColor = "white";
+      } else {
+        document.body.style.backgroundColor = "lightgreen";
+      }
+    };
+
+    document.getElementById("tampilkan").onclick = function() {
+      const teks = document.getElementById("inputTeks").value;
+      document.getElementById("hasil").textContent = teks;
+    };
+
+    document.getElementById("merah").onclick = function() {
+      document.getElementById("judul").style.color = "red";
+    };
+
+    document.getElementById("hijau").onclick = function() {
+      document.getElementById("judul").style.color = "green";
+    };
+
+    document.getElementById("biru").onclick = function() {
+      document.getElementById("judul").style.color = "blue";
+    };
+  </script>
+</body>
+</html>

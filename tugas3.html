@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ubah Warna Teks</title>
+</head>
+<body>
+  <h1 id="judul">Halo Dunia!</h1>
+
+  <button id="merah">Merah</button>
+  <button id="hijau">Hijau</button>
+  <button id="biru">Biru</button>
+
+  <script>
+    document.getElementById("merah").onclick = function() {
+      document.getElementById("judul").style.color = "red";
+    };
+
+    document.getElementById("hijau").onclick = function() {
+      document.getElementById("judul").style.color = "green";
+    };
+
+    document.getElementById("biru").onclick = function() {
+      document.getElementById("judul").style.color = "blue";
+    };
+  </script>
+</body>
+</html>

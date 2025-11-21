@@ -1,0 +1,104 @@
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Demo DOM Selector dengan Efek Transisi</title>
+<style>
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  display: inline-block;
+  background-color: lightgray;
+  text-align: center;
+  line-height: 100px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.6s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Efek hover tambahan */
+.box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Gaya tombol */
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: #555;
+}
+</style>
+</head>
+<body>
+<h2>Demo DOM Selector</h2> 
+
+<!-- Elemen target -->
+<div id="box1" class="box">ID</div>
+<div class="box">Class</div> 
+<div class="box">Class</div>
+<p class="box">P Tag</p> 
+<div class="box special">Special</div> 
+<div class="box special">Special</div>
+
+<br><br>
+
+<!-- Tombol aksi -->
+<button onclick="ubahById()">getElementById</button>
+<button onclick="ubahByClass()">getElementsByClassName</button>
+<button onclick="ubahByTag()">getElementsByTagName</button>
+<button onclick="ubahByQuery()">querySelector</button>
+<button onclick="ubahByQueryAll()">querySelectorAll</button> 
+
+<script>
+function resetWarna() { 
+  document.querySelectorAll('.box').forEach(el => { 
+    el.style.backgroundColor = "lightgray";
+  });
+}
+
+function ubahById() {
+  resetWarna(); 
+  document.getElementById("box1").style.backgroundColor = "tomato";
+}
+
+function ubahByClass() {
+  resetWarna();
+  let elems = document.getElementsByClassName("box");
+  for (let i = 0; i < elems.length; i++) {
+    elems[i].style.backgroundColor = "lightblue";
+  }
+}
+
+function ubahByTag() {
+  resetWarna();
+  let elems = document.getElementsByTagName("p");
+  for (let i = 0; i < elems.length; i++) {
+    elems[i].style.backgroundColor = "gold";
+  }
+}
+
+function ubahByQuery() {
+  resetWarna();
+  let elem = document.querySelector(".special");
+  elem.style.backgroundColor = "lightgreen";
+}
+
+function ubahByQueryAll() {
+  resetWarna();
+  let elems = document.querySelectorAll(".special");
+  elems.forEach(el => el.style.backgroundColor = "violet");
+}
+</script>
+</body>
+</html>
